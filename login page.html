@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merged Boxes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            width: 800px;
+            height: 400px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            cursor: pointer;
+            font-size: 24px;
+            color: rgb(9, 58, 29);
+        }
+        .left-box {
+            flex: 7;
+            background-color: white;
+            padding: 40px;
+        }
+        .left-box h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .left-box label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .left-box input {
+            width: 95.5%; 
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .left-box .signin-button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(9, 58, 29);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .left-box .signin-button:hover {
+            background-color: rgb(5, 40, 20);
+        }
+        .left-box .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .left-box .options a {
+            text-decoration: none;
+            color: rgb(9, 58, 29);
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .right-box {
+            flex: 3;
+            background-color: rgb(9, 58, 29);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .welcome-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .welcome-text span {
+            display: block;
+            margin: 5px 0;
+        }
+        .small-text {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .signup-button {
+            margin-top: 10px;
+            padding: 8px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            background-color: transparent;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .signup-button:hover {
+            background-color: white;
+            color: rgb(9, 58, 29);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow" onclick="goBack()">←</div> 
+        <div class="left-box">
+            <h2>Sign In</h2>
+            <label for="username">USERNAME</label>
+            <input type="text" id="username" placeholder="Username">
+            
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" placeholder="Password">
+            
+            <span id="errorMessage" class="error-message"></span> 
+            
+            <button class="signin-button" id="signinButton">Sign In</button>
+            <div class="options"></div>
+        </div>
+        <div class="right-box">
+            <p class="welcome-text">
+                <span>WELCOME</span>
+                <span>TO</span>
+                <span>LOGIN</span>
+            </p>
+            <p class="small-text">Don't have an account?</p>
+            <button class="signup-button">Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'home.html';
+        }
+
+        document.getElementById('signinButton').addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var correctUsername = 'admin';
+            var correctPassword = 'admin';
+
+            document.getElementById('errorMessage').textContent = '';
+
+            if (username === '' || password === '') {
+                document.getElementById('errorMessage').textContent = 'Input username and password';
+            } else if (username === correctUsername && password === correctPassword) {
+                window.location.href = 'admin.html';
+            } else {
+                document.getElementById('errorMessage').textContent = 'Wrong credentials';
+
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            }
+        });
+    </script>
+</body>
+</html>

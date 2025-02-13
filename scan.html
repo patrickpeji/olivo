@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    nav {
+      background-color: rgb(9, 58, 29);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-left,
+    .nav-center,
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-left {
+      flex: 1;
+    }
+    
+    .nav-center {
+      flex: 1;
+      justify-content: center;
+    }
+    
+    .nav-right {
+      flex: 1;
+      justify-content: flex-end;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      margin: 0 10px;
+    }
+    
+    nav a:hover {
+      color: #ccc;
+    }
+    
+    .nav-center img {
+      height: 40px;
+    }
+    
+    .main-content {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .main-header {
+      font-size: 60px;
+      color: rgb(9, 58, 29);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .scan-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    
+    .scan-container .image-container img {
+      height: 320px;
+      width: auto;
+      border-radius: 5px;
+      margin-right: 50px;
+    }
+    
+    .scan-container .info {
+      margin-top: 50px;
+      margin-left: 20px;
+      text-align: left;
+    }
+    
+    .scan-container .info h2 {
+      font-size: 50px;
+      color: rgb(9, 58, 29);
+      margin: 0 0 10px;
+    }
+    
+    .scan-container .info h3 {
+      font-size: 30px;
+      color: #000;
+      margin: 0 0 10px;
+    }
+    
+    .scan-container .info h4 {
+      font-size: 30px;
+      color: #000;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="home.html">Home</a>
+      <a href="scan.html">Scan</a>
+    </div>
+    <div class="nav-center">
+      <img src="DLSUD.png" alt="School Logo">
+    </div>
+    <div class="nav-right">
+      <a href="login page.html">Admin Login</a>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="main-header">LOGIN</div>
+
+    <div class="scan-container">
+      <div class="image-container">
+        <img src="person.jpg" alt="Michael Olivo">
+      </div>
+      <div class="info">
+        <h2>Michael Olivo</h2>
+        <h3>Time in: 00:00</h3>
+        <h4>Time out: 00:00</h4>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

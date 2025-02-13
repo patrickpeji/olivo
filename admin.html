@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: rgb(9, 58, 29);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-left, .nav-center, .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-left {
+      flex: 1;
+    }
+
+    .nav-center {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-right {
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    .nav-center img {
+      height: 40px;
+    }
+
+    .admin-container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: rgba(208, 218, 217, 0.615); 
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h3, .sidebar h4 {
+      cursor: pointer;
+      font-size: 18px;
+      color: rgb(9, 58, 29);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .room-list {
+      list-style-type: none;
+      padding-left: 15px;
+      display: none;
+    }
+
+    .room-list li {
+      margin: 5px 0;
+      color: rgb(0, 0, 0);
+    }
+
+    .main-content {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .main-content h1 {
+      font-size: 32px;
+      color: rgb(9, 58, 29);
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    function toggleSection(selector) {
+      const element = document.querySelector(selector);
+      element.style.display = element.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</head>
+<body>
+  
+  <nav>
+    <div class="nav-left">
+      <a href="home.html">Home</a>
+      <a href="scan.html">Scan</a>
+    </div>
+    <div class="nav-center">
+      <img src="DLSUD.png" alt="School Logo">
+    </div>
+    <div class="nav-right">
+      <a href="home.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="admin-container">
+    <div class="sidebar">
+      <h3 onclick="toggleSection('.attendance-report')">Attendance Report <span>&#x25BC;</span></h3>
+      <ul class="room-list attendance-report">
+        <li>
+          <h4 onclick="toggleSection('.cth-rooms')">CTH Rooms <span>&#x25BC;</span></h4>
+          <ul class="room-list cth-rooms">
+            <li>CTH001</li>
+            <li>CTH002</li>
+            <li>CTH003</li>
+            <li>CTH004</li>
+            <li>CTH005</li>
+            <li>CTH006</li>
+            <li>CTH007</li>
+            <li>CTH008</li>
+            <li>CTH009</li>
+            <li>CTH010</li>
+          </ul>
+        </li>
+        <li>
+          <h4 onclick="toggleSection('.mth-rooms')">MTH Rooms <span>&#x25BC;</span></h4>
+          <ul class="room-list mth-rooms">
+            <li>MTH001</li>
+            <li>MTH002</li>
+            <li>MTH003</li>
+            <li>MTH004</li>
+            <li>MTH005</li>
+            <li>MTH006</li>
+            <li>MTH007</li>
+            <li>MTH008</li>
+            <li>MTH009</li>
+            <li>MTH010</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1>ROOMS</h1>
+    </div>
+  </div>
+</body>
+</html>
